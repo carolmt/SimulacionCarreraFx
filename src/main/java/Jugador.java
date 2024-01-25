@@ -5,8 +5,8 @@ import javafx.collections.ObservableList;
 public class Jugador extends Coordenada {
     private ObservableList<Coordenada> movimientos = FXCollections.observableArrayList();
 
-    public Jugador(int coordenadaX, int coordenadaY) {
-        super(coordenadaX, coordenadaY);
+    public Jugador(int coordenadaY, int coordenadaX) {
+        super(coordenadaY, coordenadaX);
 
         movimientos.addListener(new ListChangeListener<Coordenada>() {
             @Override
@@ -56,5 +56,6 @@ public class Jugador extends Coordenada {
 
         }
     }
+
 }
 

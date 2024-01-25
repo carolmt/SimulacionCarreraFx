@@ -5,8 +5,8 @@ import java.util.Random;
 class Enemigo extends Coordenada implements ListChangeListener<Coordenada> {
     private Jugador jugador;
 
-    public Enemigo(int x, int y, Jugador jugador) {
-        super(x, y);
+    public Enemigo(int y, int x, Jugador jugador) {
+        super(y, x);
         this.jugador = jugador;
         jugador.getMovimientos().addListener(this);
     }

@@ -10,7 +10,7 @@ public class Programa {
         int x1 = inicio();
         int y1 = inicio();
         Jugador jugador = new Jugador(x1, y1);
-        System.out.println("El jugador está en la posición (" + jugador.getCoordenadaX() + "," + jugador.getCoordenadaY() + ")");
+        System.out.println("El jugador está en la posición (" + jugador.getCoordenadaY() + "," + jugador.getCoordenadaX() + ")");
 
         int x2, y2;
         do {
@@ -19,7 +19,8 @@ public class Programa {
         } while (Math.abs(x2 - x1) < 5 || Math.abs(y2 - y1) < 5); //esta condicion es para que el enemigo no este cerca del jugador
 
         Enemigo enemigo = new Enemigo(x2, y2, jugador);
-        System.out.println("El enemigo está en la posición (" + enemigo.getCoordenadaX() + "," + enemigo.getCoordenadaY() + ")");
+        System.out.println("El enemigo está en la posición (" + enemigo.getCoordenadaY() + "," + enemigo.getCoordenadaX() + ")");
+
 
         while (true) {
             System.out.print("Ingresa una dirección (w/a/s/d) para mover al jugador o 'q' para salir: ");

@@ -14,7 +14,10 @@ public class Coordenada {
     }
 
     public void setCoordenadaX(int coordenadaX) {
-        this.coordenadaX = coordenadaX;
+        Boolean limite;
+        limite = limiteMapa(coordenadaX);
+        if(limite == false)
+            this.coordenadaX = coordenadaX;
     }
 
     public int getCoordenadaY() {
@@ -22,12 +25,15 @@ public class Coordenada {
     }
 
     public void setCoordenadaY(int coordenadaY) {
-        this.coordenadaY = coordenadaY;
+        Boolean limite;
+        limite = limiteMapa(coordenadaY);
+        if(limite == false)
+            this.coordenadaY = coordenadaY;
     }
 
     @Override
     public String toString() {
-        return "(" + coordenadaX + "," + coordenadaY + ")";
+        return "(" + coordenadaY + "," + coordenadaX + ")";
     }
 
     public static Coordenada generarCoordenadaAleatoriaSeparada(Coordenada coordenadaJugador, int separacionMin) {
@@ -36,8 +42,17 @@ public class Coordenada {
         do {
             x = random.nextInt(30);
             y = random.nextInt(30);
-        } while (Math.abs(x - coordenadaJugador.coordenadaX) < separacionMin || Math.abs(y - coordenadaJugador.coordenadaY) < separacionMin);
+        } while (Math.abs(x - coordenadaJugador.coordenadaY) < separacionMin || Math.abs(y - coordenadaJugador.coordenadaX) < separacionMin);
 
         return new Coordenada(x, y);
+    }
+
+    public Boolean limiteMapa(int coordenada) {
+        if(coordenada < 0 || coordenada > 30) {
+            System.out.println("Error. Estás en el límite del mapa.");
+            return true;
+        }
+        else
+            return false;
     }
 }
