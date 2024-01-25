@@ -36,6 +36,7 @@ public class Programa {
         reader.close();
     }
 
+ //metodo para iniciar en un punto random del mapa delimitado a 30
     private static int inicio() {
         return new Random().nextInt(30);
     }

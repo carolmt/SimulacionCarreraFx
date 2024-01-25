@@ -3,11 +3,13 @@ import javafx.collections.ListChangeListener;
 import java.util.Random;
 
 class Enemigo extends Coordenada implements ListChangeListener<Coordenada> {
+    //en enemigo definimos un jugador para poder observar el listado de movimientos.
     private Jugador jugador;
 
     public Enemigo(int y, int x, Jugador jugador) {
         super(y, x);
         this.jugador = jugador;
+        //añadimos el listener para que cuando el jugador se mueva, el enemigo se mueva hacia él
         jugador.getMovimientos().addListener(this);
     }
 

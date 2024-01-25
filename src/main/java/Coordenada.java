@@ -14,6 +14,7 @@ public class Coordenada {
     }
 
     public void setCoordenadaX(int coordenadaX) {
+        //comprobamos si la nueva coordenada está dentro del mapa, si da error se queda en la misma posicion.
         Boolean limite;
         limite = limiteMapa(coordenadaX);
         if(limite == false)
@@ -47,6 +48,7 @@ public class Coordenada {
         return new Coordenada(x, y);
     }
 
+    //metodo para comprobar si la nueva coordenada está dentro del mapa, sino da error.
     public Boolean limiteMapa(int coordenada) {
         if(coordenada < 0 || coordenada > 30) {
             System.out.println("Error. Estás en el límite del mapa.");
