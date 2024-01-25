@@ -4,6 +4,7 @@ import java.util.Random;
 
 class Enemigo extends Coordenada implements ListChangeListener<Coordenada> {
     //en enemigo definimos un jugador para poder observar el listado de movimientos.
+    //además esto nos facilita añadir mas enemigos en el futuro.
     private Jugador jugador;
 
     public Enemigo(int y, int x, Jugador jugador) {
